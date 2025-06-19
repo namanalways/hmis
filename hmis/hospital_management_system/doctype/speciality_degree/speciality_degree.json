@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-19 16:09:02.193964",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "speciality",
+  "degree",
+  "institution"
+ ],
+ "fields": [
+  {
+   "fieldname": "speciality",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Speciality",
+   "options": "Speciality"
+  },
+  {
+   "fieldname": "degree",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Degree",
+   "options": "Degree"
+  },
+  {
+   "fieldname": "institution",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Institution"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-19 16:10:35.298289",
+ "modified_by": "Administrator",
+ "module": "Hospital Management System",
+ "name": "Speciality Degree",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
