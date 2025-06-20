@@ -10,6 +10,7 @@
   "doctor_name",
   "column_break_aboo",
   "age",
+  "is_active",
   "section_break_dsnw",
   "speciality"
  ],
@@ -43,12 +44,18 @@
    "fieldtype": "Table",
    "label": "speciality",
    "options": "Speciality Degree"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-19 16:12:54.233320",
+ "modified": "2025-06-20 11:39:44.517618",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "Doctor",
