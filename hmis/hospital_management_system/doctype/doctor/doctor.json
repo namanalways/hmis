@@ -12,7 +12,9 @@
   "age",
   "is_active",
   "section_break_dsnw",
-  "speciality"
+  "speciality",
+  "section_break_gmsy",
+  "opd_timings"
  ],
  "fields": [
   {
@@ -42,7 +44,7 @@
   {
    "fieldname": "speciality",
    "fieldtype": "Table",
-   "label": "speciality",
+   "label": "Speciality",
    "options": "Speciality Degree"
   },
   {
@@ -50,12 +52,22 @@
    "fieldname": "is_active",
    "fieldtype": "Check",
    "label": "Is Active"
+  },
+  {
+   "fieldname": "section_break_gmsy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "opd_timings",
+   "fieldtype": "Table",
+   "label": "OPD Timings",
+   "options": "OPD Timings"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-20 11:39:44.517618",
+ "modified": "2025-06-21 14:33:13.370981",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "Doctor",
@@ -78,5 +90,6 @@
  "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "doctor_name"
 }
