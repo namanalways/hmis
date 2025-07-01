@@ -10,14 +10,16 @@ frappe.ui.form.on('Assign Token', {
                     doctor: frm.doc.doctor
                 },
                 callback: function (r) {
-                    if (Array.isArray(r.message)) {
-                        if (frm.doc.date && !r.message.includes(frm.doc.date)) {
-                            r.message.push(frm.doc.date);
+                    const dates = r.message || [];
+                    if (Array.isArray(dates) && dates.length > 0) {
+                        if (!dates.includes(frm.doc.date)) {
+                            frm.set_value("date", null);
                         }
-                        frm.set_df_property("date", "options", r.message);
+                        frm.set_df_property("date", "options", dates);
                         frm.refresh_field("date");
                     } else {
                         frm.set_df_property("date", "options", []);
+                        frm.set_value("date", null);
                         frm.refresh_field("date");
                         frappe.msgprint("No OPD dates available for this doctor.");
                     }
