@@ -19,8 +19,7 @@ def bulk_generate_opds(doctor, timing, dates):
 	print(dates)
 	if isinstance(dates, str):
 		dates = json.loads(dates)
-	# If the value is a label, find the corresponding name
-	timing_name = frappe.db.get_value("OPD Timings Time", {"timings": timing}, "name")  # adjust fieldname if needed
+	timing_name = frappe.db.get_value("OPD Timings Time", {"timings": timing}, "name")
 
 	if not timing_name:
 		frappe.throw(f"Timing '{timing}' not found in OPD Timing Time")
@@ -51,18 +50,13 @@ def get_opd_timings_for_doctor(doctype, txt, searchfield, start, page_len, filte
     doctor = filters.get("doctor")
     if not doctor:
         return []
-
-    # Fetch timing names from child table of Doctor
-    timings = frappe.get_all("OPD Timings",  # Assuming this is your child table name
+    timings = frappe.get_all("OPD Timings",
         filters={"parent": doctor, "parenttype": "Doctor"},
-        fields=["time_slot"],  # `opd_time` is the Link field in the child table
+        fields=["time_slot"],
     )
-
     timing_names = [t.time_slot for t in timings if t.time_slot]
-
     if not timing_names:
         return []
-
     return frappe.db.sql("""
         SELECT name FROM `tabOPD Timings Time`
         WHERE name IN (%s)

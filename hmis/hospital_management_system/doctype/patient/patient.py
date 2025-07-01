@@ -9,17 +9,12 @@ import frappe
 
 class Patient(Document):
 	def autoname(self):
-		# Get today's date in YYMMDD format
 		date_str = datetime.now().strftime('%y%m%d')
-
-        # Count existing patients for today
 		today_count = frappe.db.count(
             'Patient',
             filters={
                 'patient_id': ['like', f'P-{date_str}-%']
             }
-        ) + 1  # Increment to get new serial
-
-        # Generate Patient ID
+        ) + 1
 		serial = f'{today_count:04d}'
 		self.patient_id = f'P-{date_str}-{serial}'

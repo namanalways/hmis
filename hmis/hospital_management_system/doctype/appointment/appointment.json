@@ -1,44 +1,152 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:appointment_id",
  "creation": "2025-06-21 15:03:25.288656",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "doctor_appointment_section",
   "doctor",
+  "date",
+  "selected_date",
   "column_break_sxty",
-  "amended_from"
+  "timings",
+  "opd",
+  "section_break_glts",
+  "patient_mobile_no",
+  "search_patient",
+  "patient",
+  "patient_name",
+  "column_break_zdyi",
+  "appointment_id",
+  "status",
+  "token_no",
+  "description_section",
+  "illness_description"
  ],
  "fields": [
   {
    "fieldname": "doctor",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Doctor",
-   "options": "Doctor"
+   "options": "Doctor",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_sxty",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "amended_from",
+   "fieldname": "date",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "timings",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Appointment",
-   "print_hide": 1,
+   "in_list_view": 1,
+   "label": "Timings",
+   "options": "OPD Timings Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "opd",
+   "fieldtype": "Link",
+   "label": "OPD",
+   "options": "OPD Doctor Date Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_glts",
+   "fieldtype": "Section Break",
+   "label": "Patient Details"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient ID",
+   "options": "Patient",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zdyi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appointment_id",
+   "fieldtype": "Data",
+   "label": "Appointment ID",
    "read_only": 1,
-   "search_index": 1
+   "unique": 1
+  },
+  {
+   "default": "+91-",
+   "fieldname": "patient_mobile_no",
+   "fieldtype": "Phone",
+   "label": "Patient Mobile No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "search_patient",
+   "fieldtype": "Button",
+   "label": "Search Patient"
+  },
+  {
+   "fieldname": "doctor_appointment_section",
+   "fieldtype": "Section Break",
+   "label": "Doctor Appointment"
+  },
+  {
+   "fetch_from": "patient.full_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "illness_description",
+   "fieldtype": "Long Text",
+   "label": "Illness Description"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nBooked\nOngoing\nCompleted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "token_no",
+   "fieldtype": "Data",
+   "label": "Token No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "selected_date",
+   "fieldtype": "Data",
+   "label": "Selected Date",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-06-21 15:04:45.432718",
+ "modified": "2025-07-01 14:39:59.286993",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "Appointment",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
