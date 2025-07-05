@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "doctors_detail_section",
+  "doctor_email",
   "doctor_name",
   "column_break_aboo",
   "age",
@@ -25,8 +26,8 @@
   {
    "fieldname": "doctor_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Doctor Name"
+   "label": "Doctor Name",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_aboo",
@@ -62,12 +63,19 @@
    "fieldtype": "Table",
    "label": "OPD Timings",
    "options": "OPD Timings"
+  },
+  {
+   "fieldname": "doctor_email",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor Email",
+   "options": "User"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-21 14:33:13.370981",
+ "modified": "2025-07-05 14:04:37.317971",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "Doctor",

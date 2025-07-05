@@ -1,38 +1,174 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-06-20 11:44:00.121594",
+ "autoname": "field:opd_id",
+ "creation": "2025-07-05 14:15:03.689428",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "doctor",
-  "column_break_iaci",
-  "date"
+  "opd_details_section",
+  "doctor_id",
+  "dortor_name",
+  "search_appointments",
+  "column_break_ypvu",
+  "date",
+  "timings",
+  "opd_id",
+  "patient_details_section",
+  "patient_id",
+  "patient_name",
+  "patient_mobile_no",
+  "column_break_rixr",
+  "appointment_no",
+  "token_no",
+  "problem_section",
+  "illness_description",
+  "diagnosis_section",
+  "long_text_bcyl",
+  "medicine_section",
+  "medicine",
+  "test_section",
+  "test"
  ],
  "fields": [
   {
-   "fieldname": "doctor",
-   "fieldtype": "Link",
-   "label": "Doctor",
-   "options": "Doctor"
+   "fieldname": "opd_details_section",
+   "fieldtype": "Section Break",
+   "label": "OPD Details"
   },
   {
-   "fieldname": "column_break_iaci",
+   "fieldname": "doctor_id",
+   "fieldtype": "Link",
+   "label": "Doctor ID",
+   "options": "Doctor",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "doctor_id.doctor_name",
+   "fieldname": "dortor_name",
+   "fieldtype": "Data",
+   "label": "Dortor Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ypvu",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "timings",
+   "fieldtype": "Link",
+   "label": "Timings",
+   "options": "OPD Timings Time"
+  },
+  {
+   "fieldname": "search_appointments",
+   "fieldtype": "Button",
+   "label": "Search Appointments"
+  },
+  {
+   "fieldname": "opd_id",
+   "fieldtype": "Data",
+   "label": "OPD ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "patient_details_section",
+   "fieldtype": "Section Break",
+   "label": "Patient Details"
+  },
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "label": "Patient ID",
+   "options": "Patient",
+   "read_only": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "patient_mobile_no",
+   "fieldtype": "Phone",
+   "label": "Patient Mobile No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rixr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "appointment_no",
+   "fieldtype": "Link",
+   "label": "Appointment No",
+   "options": "Appointment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "problem_section",
+   "fieldtype": "Section Break",
+   "label": "Problem"
+  },
+  {
+   "fieldname": "illness_description",
+   "fieldtype": "Long Text",
+   "label": "Illness Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "token_no",
+   "fieldtype": "Data",
+   "label": "Token No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diagnosis_section",
+   "fieldtype": "Section Break",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "long_text_bcyl",
+   "fieldtype": "Long Text"
+  },
+  {
+   "fieldname": "medicine_section",
+   "fieldtype": "Section Break",
+   "label": "Medicine"
+  },
+  {
+   "fieldname": "medicine",
+   "fieldtype": "Table",
+   "label": "Medicine",
+   "options": "OPD Medicine"
+  },
+  {
+   "fieldname": "test_section",
+   "fieldtype": "Section Break",
+   "label": "Test"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Table",
+   "label": "Test",
+   "options": "OPD Test"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-20 11:45:54.139031",
+ "modified": "2025-07-05 15:30:24.292537",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "OPD",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

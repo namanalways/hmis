@@ -5,6 +5,7 @@ app_description = "An app to manage daily routine of an hospital"
 app_email = "namanalways@gmail.com"
 app_license = "mit"
 
+after_install = "hmis.patches.add_is_doctor_field.execute"
 # Apps
 # ------------------
 
