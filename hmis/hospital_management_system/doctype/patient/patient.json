@@ -16,7 +16,9 @@
   "abha_no",
   "column_break_ncom",
   "tpu_company",
-  "insurance_no"
+  "insurance_no",
+  "appointment_opd_section",
+  "appointment_opd"
  ],
  "fields": [
   {
@@ -79,12 +81,23 @@
    "fieldtype": "Phone",
    "label": "Mobile No.",
    "reqd": 1
+  },
+  {
+   "fieldname": "appointment_opd_section",
+   "fieldtype": "Section Break",
+   "label": "Appointment OPD"
+  },
+  {
+   "fieldname": "appointment_opd",
+   "fieldtype": "Table",
+   "label": "Appointment OPD",
+   "options": "Appointment OPD"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-24 11:20:36.219410",
+ "modified": "2025-07-07 10:51:31.648132",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "Patient",

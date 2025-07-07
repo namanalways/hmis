@@ -24,11 +24,12 @@
   "problem_section",
   "illness_description",
   "diagnosis_section",
-  "long_text_bcyl",
+  "diagnosis",
   "medicine_section",
   "medicine",
   "test_section",
-  "test"
+  "test",
+  "amended_from"
  ],
  "fields": [
   {
@@ -135,10 +136,6 @@
    "label": "Diagnosis"
   },
   {
-   "fieldname": "long_text_bcyl",
-   "fieldtype": "Long Text"
-  },
-  {
    "fieldname": "medicine_section",
    "fieldtype": "Section Break",
    "label": "Medicine"
@@ -159,12 +156,28 @@
    "fieldtype": "Table",
    "label": "Test",
    "options": "OPD Test"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Long Text",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "OPD",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-07-05 15:30:24.292537",
+ "modified": "2025-07-07 16:39:46.000064",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "OPD",

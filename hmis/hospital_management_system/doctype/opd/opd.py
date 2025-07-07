@@ -7,17 +7,29 @@ from datetime import datetime, date
 
 
 class OPD(Document):
-	def autoname(self):
-		date_str = datetime.now().strftime('%y%m%d')
-		today_count = frappe.db.count(
+    def autoname(self):
+        date_str = datetime.now().strftime('%y%m%d')
+        today_count = frappe.db.count(
             'OPD',
             filters={
                 'opd_id': ['like', f'OPD-{date_str}-%']
             }
-		)
-		today_count += 1
-		serial = f'{today_count:04d}'
-		self.opd_id = f'OPD-{date_str}-{serial}'
+        )
+        today_count += 1
+        serial = f'{today_count:04d}'
+        self.opd_id = f'OPD-{date_str}-{serial}'
+
+    def before_submit(self):
+        if not self.appointment_no or not self.patient_id:
+            frappe.throw("OPD must be linked to an appointment and patient.")
+        appointment = frappe.get_doc("Appointment", self.appointment_no)
+        appointment.db_set("status", "Completed")
+        patient = frappe.get_doc("Patient", self.patient_id)
+        for row in patient.appointment_opd:
+            if row.appointment == self.appointment_no:
+                row.opd = self.name
+                break
+        patient.save(ignore_permissions=True)
 
 @frappe.whitelist()
 def get_current_doctor():

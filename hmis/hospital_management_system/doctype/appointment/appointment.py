@@ -38,6 +38,21 @@ class Appointment(Document):
             else:
                 frappe.throw("No matching OPD slot found for the selected doctor, date, and time.")
 
+    def after_insert(self):
+        if not self.patient:
+            frappe.throw("Patient ID is required to save appointment.")
+
+        patient = frappe.get_doc("Patient", self.patient)
+        exists = any(row.appointment == self.name for row in patient.appointment_opd)
+
+        if not exists:
+            # Proper way to append child rows
+            patient.append("appointment_opd", {
+                "appointment": self.name
+            })
+
+            patient.save(ignore_permissions=True)
+
 @frappe.whitelist()
 def get_opd_dates(doctor):
     today = date.today()
