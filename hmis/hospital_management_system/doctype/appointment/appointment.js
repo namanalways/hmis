@@ -32,6 +32,7 @@ frappe.ui.form.on('Appointment', {
 frappe.ui.form.on('Appointment', {
     date: function (frm) {
         if (frm.doc.doctor && frm.doc.date) {
+            console.log("Fetching timings for doctor:", frm.doc.doctor, "on date:", frm.doc.date);
             frm.set_query('timings', function () {
                 return {
                     query: 'hmis.hospital_management_system.doctype.appointment.appointment.get_filtered_opd_timings',

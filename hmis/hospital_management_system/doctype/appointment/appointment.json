@@ -13,9 +13,11 @@
   "column_break_sxty",
   "timings",
   "opd",
+  "time",
   "section_break_glts",
   "patient_mobile_no",
   "search_patient",
+  "pid",
   "patient",
   "patient_name",
   "column_break_zdyi",
@@ -137,12 +139,24 @@
    "fieldtype": "Data",
    "label": "Selected Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Time"
+  },
+  {
+   "fieldname": "pid",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "PID"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-01 14:39:59.286993",
+ "modified": "2025-07-09 15:11:41.372210",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "Appointment",

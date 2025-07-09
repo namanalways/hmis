@@ -86,6 +86,7 @@
   {
    "fieldname": "patient_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Patient ID",
    "options": "Patient",
    "read_only": 1
@@ -93,6 +94,7 @@
   {
    "fieldname": "patient_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Patient Name",
    "read_only": 1
   },
@@ -177,7 +179,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-07 16:39:46.000064",
+ "modified": "2025-07-07 16:54:14.762893",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "OPD",

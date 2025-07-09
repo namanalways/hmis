@@ -37,7 +37,7 @@ after_install = "hmis.patches.add_is_doctor_field.execute"
 # website_theme_scss = "hmis/public/scss/website"
 
 # include js, css files in header of web form
-# webform_include_js = {"doctype": "public/js/doctype.js"}
+webform_include_js = {"Appointment": "public/js/appointment_webform.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
