@@ -73,21 +73,18 @@ frappe.ready(() => {
     frappe.web_form.on('pid', (field, value) => {
         if (!value) {
             frappe.web_form.set_value('patient', '');
+            frappe.web_form.set_value('patient_name', '');
             return;
         }
-
         frappe.call({
-            method: 'frappe.client.get',
-            args: {
-                doctype: 'Patient',
-                name: value
-            },
-            callback: function (r) {
+            method: 'hmis.hospital_management_system.api.opd_booking.get_patient_name_by_id',
+            args: { patient_id: value },
+            callback: r => {
                 if (r.message) {
-                    frappe.web_form.set_value('patient_name', r.message.full_name);
-                    frappe.web_form.set_value('patient', r.message.name);
+                    frappe.web_form.set_value('patient_name', r.message[0].full_name);
+                    frappe.web_form.set_value('patient', r.message[0].name);
                 }
-            }
+            }          
         });
     });
 });

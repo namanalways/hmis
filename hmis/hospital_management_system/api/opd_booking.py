@@ -2,7 +2,7 @@ import frappe
 from frappe.utils import nowdate
 import re
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_opd_dates(doctor):
     if not doctor:
         return []
@@ -20,7 +20,7 @@ def get_opd_dates(doctor):
         order_by="date asc"
     )
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_opd_timings(doctor, date):
     if not doctor or not date:
         return []
@@ -36,14 +36,11 @@ def get_opd_timings(doctor, date):
         order_by="timings asc"
     )
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_patient_ids_by_mobile(mobile_no):
     if not mobile_no:
         return []
-
     mobile_no = mobile_no[-10:]
-
-    # Fetch all and filter manually
     patients = frappe.get_all("Patient", fields=["name", "mobile_no","full_name"])
     matched = [
         {"name": p.name,
@@ -51,5 +48,14 @@ def get_patient_ids_by_mobile(mobile_no):
         for p in patients
         if re.sub(r'\D', '', p.mobile_no or '')[-10:] == mobile_no
     ]
-
     return matched
+
+@frappe.whitelist(allow_guest=True)
+def get_patient_name_by_id(patient_id):
+    return frappe.get_all(
+        "Patient",
+        filters={
+            "patient_id": patient_id
+        },
+        fields=["name", "full_name"]
+    )
