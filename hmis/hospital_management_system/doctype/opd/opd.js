@@ -9,7 +9,9 @@ frappe.ui.form.on('OPD', {
                 if (r.message) {
                     frm.set_value("doctor_id", r.message);
                 }
-                frm.set_value("date", frappe.datetime.get_today());
+                if (frm.doc.date.trim() === "") {
+                    frm.set_value("date", frappe.datetime.get_today());
+                }
             }
         });
         frm.set_query('timings', function () {

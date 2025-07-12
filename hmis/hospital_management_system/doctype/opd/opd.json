@@ -8,7 +8,7 @@
  "field_order": [
   "opd_details_section",
   "doctor_id",
-  "dortor_name",
+  "doctor_name",
   "search_appointments",
   "column_break_ypvu",
   "date",
@@ -42,13 +42,6 @@
    "fieldtype": "Link",
    "label": "Doctor ID",
    "options": "Doctor",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "doctor_id.doctor_name",
-   "fieldname": "dortor_name",
-   "fieldtype": "Data",
-   "label": "Dortor Name",
    "read_only": 1
   },
   {
@@ -173,13 +166,20 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "doctor_id.doctor_name",
+   "fieldname": "doctor_name",
+   "fieldtype": "Data",
+   "label": "Doctor Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-07 16:54:14.762893",
+ "modified": "2025-07-12 11:01:24.563601",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "OPD",
