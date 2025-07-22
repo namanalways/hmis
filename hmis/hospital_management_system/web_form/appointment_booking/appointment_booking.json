@@ -23,7 +23,7 @@
  "login_required": 0,
  "max_attachment_size": 0,
  "meta_title": "",
- "modified": "2025-07-10 11:36:19.537552",
+ "modified": "2025-07-14 15:13:29.010565",
  "modified_by": "Administrator",
  "module": "Hospital Management System",
  "name": "appointment-booking",
@@ -32,7 +32,7 @@
  "route": "book-appointment",
  "show_attachments": 0,
  "show_list": 0,
- "show_sidebar": 0,
+ "show_sidebar": 1,
  "success_message": "Your Appointment has been booked successfully.",
  "success_title": "Appointment Booked",
  "title": "Appointment Booking",
@@ -290,5 +290,5 @@
    "show_in_filter": 0
   }
  ],
- "website_sidebar": ""
+ "website_sidebar": "Sidebar"
 }
