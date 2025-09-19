@@ -37,6 +37,12 @@ def get_current_doctor():
     doctor_name = frappe.db.get_value("Doctor", {"doctor_email": user}, "name")
     return doctor_name
 
+# @frappe.whitelist()
+# def get_all_doctor():
+#     # user = frappe.session.user
+#     doctor_name = frappe.db.get_list('Doctor',fields=['doctor_name', 'doctor_email'])
+#     return doctor_name
+
 @frappe.whitelist()
 def get_filtered_opd_timings(doctype, txt, searchfield, start, page_len, filters):
     return frappe.db.sql("""
